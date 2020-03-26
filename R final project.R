@@ -7,6 +7,18 @@ library (Rmagic)
 library (magic)
 library(pROC)
 
+library(readr)
+heart_disease <- read_csv("C:/Users/Skorupolu/Desktop/processed.cleveland.data.csv", 
+                          col_names = FALSE, col_types = cols(X1 = col_number(), 
+                                                              X2 = col_number(), X3 = col_number(), 
+                                                              X4 = col_number(), X5 = col_number(), 
+                                                              X6 = col_number(), X7 = col_number(), 
+                                                              X8 = col_number(), X9 = col_number(),
+                                                              X10 = col_number(), X11 = col_number(), 
+                                                              X12 = col_number(), X13 = col_number(), 
+                                                              X14 = col_number()))
+View(heart_disease)
+
 #Accessing Data
 summary(heart_disease)
 heart_disease <- heart_disease[ , !(names(heart_disease) %in% c("id"))]
